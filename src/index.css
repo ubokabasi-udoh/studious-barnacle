@@ -1,0 +1,13 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+body{@apply bg-[#F8FAFC] text-navy antialiased dark:bg-[#0B1120] dark:text-slate-100}
+:focus-visible{@apply outline-2 outline-offset-2 outline-brand-bright}
+@layer components{
+ .card{@apply rounded-2xl border border-[#E2E8F0] bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900}
+ .muted{@apply text-[#64748B] dark:text-slate-400}
+ .nav{@apply flex min-h-[44px] items-center gap-3 rounded-xl px-3 text-sm font-medium text-[#64748B] transition-colors hover:bg-brand-soft hover:text-brand dark:hover:bg-slate-800}
+ .nav.active{@apply bg-brand-soft text-brand dark:bg-slate-800 dark:text-brand-bright}
+}
+@keyframes pop{50%{transform:scale(1.2)}}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}}
+.pop{animation:pop .2s}.rise{animation:rise .2s}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
